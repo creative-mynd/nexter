@@ -1,0 +1,135 @@
+/* COLOR VARIABLES */
+:root {
+  --color-primary: #c69963;
+  --color-primary-dark: #b28451;
+
+  --color-secondary: #101d2c;
+
+  --color-grey-light-1: #f9f7f6;
+  --color-grey-light-2: #aaa;
+
+  --color-grey-dark-1: #54483a;
+  --color-grey-dark-2: #6d5d4b;
+
+  /* FONT VARIABLES */
+  --font-primary: "Nunito", sans-serif;
+  --font-display: "Josefin Sans", sans-serif;
+
+  /* Responsive Breakpoint */
+  --bp-largest: 75em; /* 1200px */
+  --bp-large: 62.5em; /* 1000px */
+  --bp-medium: 50em; /* 800 */
+  --bp-small: 37.5em; /* 600 */
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 10px/16px = 0.625 // 62.5% */
+  line-height: 1.6;
+  font-weight: 300;
+
+  @media only screen and (max-width: 75em) {
+    font-size: 50;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] 1fr [full-end];
+}
+
+/* TYPOGRAPHY */
+.heading-1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 4.5rem;
+
+  color: var(--color-grey-light-1);
+}
+
+.heading-2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 4rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.heading-2--light {
+  color: var(--color-grey-light-1);
+}
+.heading-2--dark {
+  color: var(--color-grey-dark-1);
+}
+
+.heading-3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.heading-4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.9rem;
+}
+
+/* Typography Modifier */
+.heading-4--light {
+  color: var(--color-grey-light-1);
+}
+
+.heading-4--dark {
+  color: var(--color-grey-dark-1);
+}
+
+/* Button */
+.btn {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* HELPER CLASS */
+.mb-sm {
+  margin-bottom: 2rem;
+}
+.mb-md {
+  margin-bottom: 3rem;
+}
+.mb-lg {
+  margin-bottom: 4rem;
+}
+.mb-bg {
+  margin-bottom: 8rem;
+}
+/* Development Purpose */
+/* .container > * {
+  padding: 40px;
+  font-size: 3rem;
+} */
